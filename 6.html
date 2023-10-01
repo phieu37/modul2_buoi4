@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slideshow</title>
+    <link rel="stylesheet" href="6.css">
+</head>
+
+<body>
+    <div class="slideshow__container">
+        <div class="slide__list">
+            <div class="slide">
+                <img src="../img/shopee1.jfif" style="width:100%">
+            </div>
+
+            <div class="slide">
+                <img src="../img/shopee2.jfif" style="width:100%">
+            </div>
+
+            <div class="slide">
+                <img src="../img/shopee3.jfif" style="width:100%">
+            </div>
+
+            <div class="slide">
+                <img src="../img/shopee4.jfif" style="width:100%">
+            </div>
+        </div>
+
+        <div class="slide__btn">
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+        </div>
+
+        <div class="dot__list">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+
+        <script src="6.js"></script>
+</body>
+
+</html>

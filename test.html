@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow like Shopee.vn</title>
+    <style>
+        .slideshow-container {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .dots-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: gray;
+            border-radius: 50%;
+            margin: 0 8px;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #f44336;
+        }
+
+        .btn {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-weight: bold;
+            border: none;
+            outline: none;
+        }
+
+        .btn.prev {
+            left: 0;
+        }
+
+        .btn.next {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <img src="../img/shopee1.jfif" alt="Slide 1">
+        </div>
+        <div class="slide fade">
+            <img src="../img/shopee2.jfif" alt="Slide 2">
+        </div>
+        <div class="slide fade">
+            <img src="../img/shopee3.jfif" alt="Slide 3">
+        </div>
+        <!-- Add more slides as needed -->
+
+        <button class="btn prev" onclick="plusSlides(-1)">Prev</button>
+        <button class="btn next" onclick="plusSlides(1)">Next</button>
+
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <!-- Add more dots as needed -->
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        let slideInterval = setInterval(function () {
+            plusSlides(1);
+        }, 5000);
+    </script>
+</body>
+</html>

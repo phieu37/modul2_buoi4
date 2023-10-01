@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chức năng Tăng/Giảm Cỡ Chữ</title>
+
+  <style>
+    #container {
+      width: 500px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+    }
+
+    #btn button{
+      background: #1B8CF1;
+      color: #fff;
+      border: none;
+      margin: 10px;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div>
+      <p>Cỡ chữ</p>
+    </div>
+    
+    <div id="btn">
+      <button onclick="upSize()">Chữ lớn</button>
+      <button onclick="downSize()">Chữ nhỏ</button>
+      <button onclick="defaultSize()">Mặc Định</button>
+    </div>
+  </div>
+
+  <script>
+    let currentSize = 16; // Cỡ chữ ban đầu
+
+    // Tăng kích thước lên 40%
+    function upSize() {
+      currentSize += 6.4; 
+      document.getElementById("container").style.fontSize = currentSize + "px";
+    }
+
+    // Giảm kích thước đi 40%
+    function downSize() {
+      currentSize /= 1.4; 
+      document.getElementById("container").style.fontSize = currentSize + "px";
+    }
+
+    // Trả về cỡ chữ ban đầu
+    function defaultSize() {
+      currentSize = 16; 
+      document.getElementById("container").style.fontSize = currentSize + 'px';
+    }
+  </script>
+</body>
+
+</html>

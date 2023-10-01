@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box
+}
+
+/* Slideshow container */
+.slideshow__container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.slide__btn {
+    display: none;
+}
+
+.slide__btn button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border: none;
+    background: rgba(0,0,0,0.18);
+    color: #fff;
+    padding: 30px 20px;
+    font-size: 30px;
+}
+
+.slide__btn .prev {
+    left: 0;
+}
+
+.slide__btn .next {
+    right: 0;
+}
+
+/* Ẩn các slider */
+.slide {
+    display: none;
+}
+
+/* định dạng các chấm chuyển đổi các slide */
+.dot__list {
+    text-align: center;
+    margin-top: -30px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color:hsla(0,0%,100%,0.4);
+    border-radius: 50%;
+    display: inline-block;
+    /* transition: opacity 0.5s ease; */
+}
+
+/* khi được hover, active đổi màu nền */
+.active {
+    background-color: #EC4428;
+}
+
+.slideshow__container:hover .slide__btn{
+    display: block;
+}
+
+.next:hover,
+.prev:hover{
+    background: rgba(0,0,0,0.3);
+}

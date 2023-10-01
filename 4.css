@@ -1,0 +1,36 @@
+
+.container {
+    width: 35%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.container h1 {
+    font-weight: bold;
+    font-size:larger;
+}
+
+.checkbox__form {
+    padding: 20px ;
+}
+
+.checkbox__form button {
+    background: #FF9B00;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.checkbox__row {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    box-shadow: 5px 2px 4px #ccc;
+    margin-bottom: 15px;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+}
+
+.checkbox__row:hover {
+    background: #51C4FF;
+    border: none;
+}
